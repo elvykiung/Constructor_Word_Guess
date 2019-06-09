@@ -1,27 +1,29 @@
-function Letter(word) {
-  this.word = word;
+function Letter(underlyingChar) {
+  this.underlyingChar = underlyingChar;
   this.guestedletter = false;
+  this.placeholder = '_';
 
   this.userGuessed = function() {
     if (this.guestedletter) {
-      console.log('CORRECT!');
-      console.log(process.argv[2]);
+      //console.log('CORRECT!');
+      return this.underlyingChar;
     } else {
-      console.log('INCORRECT!!!');
-      console.log('_');
+      //console.log('INCORRECT!!!');
+      return this.placeholder;
     }
   };
 
   this.checker = function(char) {
-    for (let i = 0; i < this.word.length; i++) {
-      if (this.word.charAt(i) === char) {
-        this.guestedletter = true;
-      }
+    if (this.underlyingChar === char) {
+      this.guestedletter = true;
+      // console.log('true');
     }
   };
 }
 
-var newWord = new Letter('cat');
+// var newWord = new Letter('a');
 
-newWord.checker(process.argv[2]);
-newWord.userGuessed();
+// newWord.checker(process.argv[2]);
+// var test = newWord.userGuessed();
+
+module.exports = Letter;
