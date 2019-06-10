@@ -1,6 +1,7 @@
 var Letter = require('./Letter');
 
 function Word(underlyingWord) {
+  this.underlyingWord = underlyingWord;
   this.letterArray = [];
   for (let i = 0; i < underlyingWord.length; i++) {
     var underlyingLetter = underlyingWord[i];
@@ -11,21 +12,27 @@ function Word(underlyingWord) {
   this.wordRepresent = function() {
     var word = '';
     for (let i = 0; i < this.letterArray.length; i++) {
-      word += this.letterArray[i].userGuessed() + ' ';
+      word += this.letterArray[i].userGuessed();
     }
     return word;
   };
 
   this.wordGuess = function(char) {
+    var guessedRight = false;
     for (let i = 0; i < this.letterArray.length; i++) {
-      this.letterArray[i].checker(char);
+      var checker = this.letterArray[i].checker(char);
+      if (checker == true) {
+        guessedRight = true;
+      }
     }
+    return guessedRight;
   };
 }
 
-var test = new Word('cat');
+// var test = new Word('cat');
+// test.wordGuess(process.argv[2]);
 
 // var pre = test.wordRepresent();
-// var gue = test.wordGuess('a');
-// console.log(gue);
+
+// console.log(pre);
 module.exports = Word;

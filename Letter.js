@@ -1,7 +1,7 @@
 function Letter(underlyingChar) {
   this.underlyingChar = underlyingChar;
   this.guestedletter = false;
-  this.placeholder = '_';
+  this.placeholder = '_ ';
 
   this.userGuessed = function() {
     if (this.guestedletter) {
@@ -16,7 +16,10 @@ function Letter(underlyingChar) {
   this.checker = function(char) {
     if (this.underlyingChar === char) {
       this.guestedletter = true;
+      return true;
       // console.log('true');
+    } else {
+      return false;
     }
   };
 }
