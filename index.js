@@ -5,7 +5,7 @@ var avilableWords = ['dog', 'cat', 'chicken', 'fish', 'bird', 'horse', 'cow', 'd
 
 var gameWord = new Word(avilableWords[0]);
 var wordNeedToGuess = gameWord.wordRepresent();
-var count = 3;
+var count = 5;
 
 console.log(wordNeedToGuess);
 
