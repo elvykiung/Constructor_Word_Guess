@@ -10,7 +10,7 @@
 
 This is Word Guess command-line game using constructor functions.
 
-![screenshot](ScreenShot.GIF)
+![screenshot](https://github.com/elvykiung/Constructor_Word_Guess/blob/master/ScreenShot.gif?raw=true)
 
 ## Technologies
 
