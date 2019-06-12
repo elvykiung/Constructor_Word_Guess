@@ -28,6 +28,7 @@ var userGuess = function() {
           console.log('You Got it! Next word!');
           var randomNum = Math.floor(Math.random() * 10 + 1);
           gameWord = new Word(avilableWords[randomNum]);
+          console.log(gameWord.wordRepresent());
           userGuess();
         } else {
           console.log('Correct!');
